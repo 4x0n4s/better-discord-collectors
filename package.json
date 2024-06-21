@@ -1,0 +1,29 @@
+{
+  "name": "better-discord-collectors",
+  "version": "0.7.0",
+  "description": "Modern's and powerful's collectors",
+  "keywords": [
+    "discord",
+    "discord.js",
+    "collector",
+    "interaction",
+    "message",
+    "reaction",
+    "modal",
+    "bot"
+  ],
+  "author": "4x0n4s",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4x0n4s/better-discord-collectors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/4x0n4s/better-discord-collectors/issues"
+  },
+  "homepage": "https://github.com/4x0n4s/better-discord-collectors#readme",
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.7.4"
+  }
+}
