@@ -1,9 +1,9 @@
 better-discord-collectors
 
-
-```js
-const { Client } =  require('discord.js');
-const { ButtonCollector } =  require('better-discord-collectors'); //TypeScript Suported
+Basic Usage
+```ts
+import { Client } from 'discord.js';
+import { ButtonCollector } from 'better-discord-collectors';
 
 const client = new Client({ intents: 3276799 });
 client.on('messageCreate', async ({ content, channel, author }) => {
@@ -29,8 +29,17 @@ client.on('messageCreate', async ({ content, channel, author }) => {
             autoUpdate: true
         }).setCallback((interaction, self) => {
             interaction?.channel?.send('Collector Work!');
-            self.setEnd();
+            self.setEnd(); // If you use this collector in a command, to avoid duplication.
         });
     }
 });
+```
+
+Other usage
+```ts
+const collector = new ButtonCollector(client, {}).setCallback((interaction, self) => {
+    //Code
+});
+
+export default collector;
 ```
