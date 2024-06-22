@@ -23,14 +23,19 @@ client.on('messageCreate', async ({ content, channel, author }) => {
             }]
         })
         
-        new ButtonCollector(client, {
+        let collector = new ButtonCollector(client, {
             customsIDs: 'test',
             usersIDs: author.id,
-            autoUpdate: true
+            rolesIDs: ['123456789012345', '09876543212345'],
+            autoUpdate: true, //.deferUpdate
+            autoReply: true //.deferReply
         }).setCallback((interaction, self) => {
             interaction?.channel?.send('Collector Work!');
             self.setEnd(); // If you use this collector in a command, to avoid duplication.
         });
+
+        //If you want edit the timeout of the end
+        collector.extendTime(60_000); //
     }
 });
 ```
